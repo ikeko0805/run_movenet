@@ -9,7 +9,19 @@ import numpy as np
 
 
 def main():
-    print(cv2.getBuildInformation())
+    cap = cv2.VideoCapture("autovideosrc ! videoconvert ! appsink")
+    
+    while True:
+        cap_available, img_mat = cap.read()
+        if not cap_available:
+            break
+        
+
+        cv2.imshow("img",img_mat)
+        
+        key = cv2.waitKey(1)
+        if key==27: #[esc] key
+            break
 
 
 if __name__ == "__main__":
