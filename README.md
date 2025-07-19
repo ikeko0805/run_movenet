@@ -5,6 +5,7 @@
 
 ### cmake param
 ```shell
+# configure
 cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ^
     -D WITH_GSTREAMER=ON ^
     -D CMAKE_BUILD_TYPE=Release ^
@@ -33,4 +34,11 @@ cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules ^
     -D GSTREAMER_riff_LIBRARY="C:/1.0/msvc_x86_64/lib/gstriff-1.0.lib" ^
     -D GSTREAMER_video_LIBRARY="C:/1.0/msvc_x86_64/lib/gstvideo-1.0.lib" ^
     ../../opencv
+
+# build
+cmake --build . --config Release -- /m:8
+
+#install 
+cmake --build . --config Release --target install
+
 ```
